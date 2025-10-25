@@ -14,7 +14,7 @@ type SchedulerV1 struct {
     Actives  []Proposer
 }
 
-// Fixed version: ensures proposer must be active before scheduling.
+// Fixed: ensure requested proposer is active; do not include inactive in actives.
 func NewSchedulerV1(addr Address, proposers []Proposer) (*SchedulerV1, error) {
     actives := make([]Proposer, 0, len(proposers))
     listed := false

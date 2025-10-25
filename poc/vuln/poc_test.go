@@ -2,6 +2,8 @@ package vuln
 
 import "testing"
 
+// PoC: demonstrates vulnerable behavior by asserting the inactive proposer
+// is present in the actives set (this is the bug).
 func Test_InactiveProposerStillScheduled(t *testing.T) {
     requested := Address("0xAA")
     proposers := []Proposer{

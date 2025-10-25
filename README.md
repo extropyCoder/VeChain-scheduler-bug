@@ -1,26 +1,13 @@
-# VeChain Scheduler Bug PoC
+# VeChain Scheduler Bug PoC (Minimal)
 
-This repository demonstrates a bug where inactive proposers can still be scheduled
-due to a missing active check in `NewSchedulerV1`.
+Minimal, local, and **safe** PoC showing that an inactive proposer can still be scheduled.
 
-- `poc/vuln`: vulnerable version + failing PoC test (shows inactive proposer scheduled)
-- `fix`: patched version + passing test
-- `report.md`: Immunefi-ready report
-
-## Run PoC
-
+## Run PoC (vulnerable behavior)
 ```bash
 go test ./poc/vuln -v
 ```
 
 ## Run fixed version
-
 ```bash
 go test ./fix -v
-```
-
-## Package for submission
-
-```bash
-zip -r VeChain-scheduler-bug.zip .
 ```
